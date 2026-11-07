@@ -26,7 +26,7 @@ export function WhatsAppButton() {
           transition={{ duration: 0.5, ease: easeSoft, delay: 1 }}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          className="flex h-14 w-14 items-center justify-center rounded-full bg-whatsapp text-white shadow-[0_12px_28px_-10px_rgb(31_168_85/0.6)]"
+          className="flex h-14 w-14 items-center justify-center rounded-full bg-ink-deep text-white shadow-lift ring-1 ring-white/10 transition-colors hover:bg-accent"
         >
           <WhatsAppIcon size={26} />
         </motion.a>
@@ -40,21 +40,21 @@ export function WhatsAppButton() {
             animate={{ y: 0 }}
             exit={{ y: '100%' }}
             transition={{ duration: 0.45, ease: easeSoft }}
-            className="fixed inset-x-0 bottom-0 z-40 border-t border-line bg-cream/95 pb-safe backdrop-blur-xl md:hidden"
+            className="fixed inset-x-0 bottom-0 z-40 border-t border-line bg-white/95 pb-safe backdrop-blur-xl md:hidden"
           >
             <div className="flex gap-2.5 px-4 py-2.5">
               <a
                 href={telLink}
-                className="flex h-12 flex-1 items-center justify-center gap-2 rounded-full border border-cocoa/20 bg-white/60 text-[0.925rem] font-medium text-cocoa transition-transform active:scale-[0.97]"
+                className="flex h-12 flex-1 items-center justify-center gap-2 rounded-control border border-line bg-white text-[0.925rem] font-semibold text-ink transition-transform active:scale-[0.97]"
               >
                 <Phone size={17} strokeWidth={1.75} /> Call Now
               </a>
               <a
                 href={whatsappLink()}
                 {...external}
-                className="flex h-12 flex-[1.5] items-center justify-center gap-2 rounded-full bg-cocoa text-[0.925rem] font-medium text-cream transition-transform active:scale-[0.97]"
+                className="flex h-12 flex-[1.5] items-center justify-center gap-2 rounded-control bg-ink-deep text-[0.925rem] font-semibold text-white transition-transform active:scale-[0.97]"
               >
-                <WhatsAppIcon size={18} className="text-[#5fd08c]" /> Order on WhatsApp
+                <WhatsAppIcon size={18} /> Order on WhatsApp
               </a>
             </div>
           </motion.div>

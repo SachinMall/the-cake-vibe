@@ -5,10 +5,10 @@ type Size = 'sm' | 'md' | 'lg'
 
 const variants: Record<Variant, string> = {
   primary:
-    'bg-cocoa text-cream shadow-[0_1px_0_rgb(255_255_255/0.08)_inset,0_8px_20px_-12px_rgb(73_53_47/0.6)] hover:bg-cocoa-deep hover:shadow-[0_1px_0_rgb(255_255_255/0.08)_inset,0_14px_28px_-14px_rgb(73_53_47/0.7)]',
-  outline: 'border border-cocoa/20 bg-white/40 text-cocoa hover:border-cocoa/60 hover:bg-white',
-  light: 'bg-white text-cocoa shadow-soft hover:bg-cream',
-  ghost: 'text-cocoa underline-offset-4 hover:text-accent-deep hover:underline',
+    'bg-ink-deep text-white hover:bg-ink active:bg-black',
+  outline: 'border border-line bg-white text-ink hover:border-ink-deep/40 hover:bg-mist',
+  light: 'bg-white text-ink border border-line hover:bg-mist',
+  ghost: 'text-ink underline-offset-4 hover:text-accent hover:underline',
 }
 
 /* All sizes meet the 44px touch-target minimum except `sm`, used only on desktop chrome. */
@@ -36,7 +36,7 @@ export function ButtonLink({
 }: ButtonLinkProps) {
   return (
     <a
-      className={`group inline-flex max-w-full shrink-0 items-center justify-center rounded-full font-medium tracking-[0.01em] transition-[background-color,border-color,color,box-shadow,transform] duration-300 ease-(--ease-soft) hover:-translate-y-px active:translate-y-0 active:scale-[0.98] ${variants[variant]} ${sizes[size]} ${className}`}
+      className={`group inline-flex max-w-full shrink-0 items-center justify-center rounded-control font-semibold transition-[background-color,border-color,color,box-shadow,transform] duration-300 ease-(--ease-soft) hover:-translate-y-px active:translate-y-0 active:scale-[0.98] ${variants[variant]} ${sizes[size]} ${className}`}
       {...props}
     >
       {icon}

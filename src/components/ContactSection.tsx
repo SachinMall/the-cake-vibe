@@ -10,10 +10,10 @@ import { SectionHeading } from './SectionHeading'
 function Row({ icon, label, children, wide }: { icon: ReactNode; label: string; children: ReactNode; wide?: boolean }) {
   return (
     <div className={`flex gap-3.5 border-t border-line py-4 ${wide ? 'sm:col-span-2' : ''}`}>
-      <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-sand text-accent-deep">{icon}</span>
+      <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-control bg-mist text-ink">{icon}</span>
       <div className="min-w-0">
         <dt className="text-[0.68rem] font-semibold tracking-[0.18em] text-muted uppercase">{label}</dt>
-        <dd className="mt-0.5 text-[0.95rem] leading-relaxed break-words text-cocoa">{children}</dd>
+        <dd className="mt-0.5 text-[0.95rem] leading-relaxed break-words text-ink">{children}</dd>
       </div>
     </div>
   )
@@ -22,7 +22,7 @@ function Row({ icon, label, children, wide }: { icon: ReactNode; label: string; 
 export function ContactSection() {
   const { address } = siteConfig
   return (
-    <section id="contact" aria-labelledby="contact-title" className="section">
+    <section id="contact" aria-labelledby="contact-title" className="section bg-mist">
       <div className="container-page grid items-center gap-10 lg:grid-cols-[1fr_1.15fr] lg:gap-16">
         <div>
           <SectionHeading
@@ -31,7 +31,7 @@ export function ContactSection() {
             eyebrow="Contact"
             title={
               <>
-                Let's make your <em className="text-accent">celebration</em> sweeter
+                Let's make your <span className="text-muted">celebration</span> sweeter
               </>
             }
             intro="Message us on WhatsApp or give us a call — we'd love to hear what you're celebrating."
@@ -48,22 +48,22 @@ export function ContactSection() {
             <a
               href={directionsLink}
               {...external}
-              className="mt-3 inline-flex min-h-11 items-center gap-2 text-[0.925rem] font-medium text-cocoa underline-offset-4 transition-colors hover:text-accent-deep hover:underline"
+              className="mt-3 inline-flex min-h-11 items-center gap-2 text-[0.925rem] font-medium text-ink underline-offset-4 transition-colors hover:text-accent hover:underline"
             >
-              <Navigation size={16} strokeWidth={1.75} className="text-accent-deep" /> Get directions
+              <Navigation size={16} strokeWidth={1.75} className="text-accent" /> Get directions
             </a>
           </Reveal>
         </div>
 
         <Reveal delay={0.12}>
           <div className="rounded-panel border border-line bg-white px-5 pt-5 pb-1 shadow-soft sm:px-8 sm:pt-7 sm:pb-3">
-            <p className="pb-4 font-display text-[1.6rem] leading-tight text-cocoa">{siteConfig.name}</p>
+            <p className="pb-4 font-display text-[1.6rem] leading-tight font-semibold tracking-[-0.015em] text-ink">{siteConfig.name}</p>
             <dl className="grid sm:grid-cols-2 sm:gap-x-8">
               <Row icon={<User size={16} strokeWidth={1.6} />} label="Owner">
                 {siteConfig.owner}
               </Row>
               <Row icon={<Phone size={16} strokeWidth={1.6} />} label="Phone & WhatsApp">
-                <a href={telLink} className="transition-colors hover:text-accent-deep">
+                <a href={telLink} className="transition-colors hover:text-accent">
                   {siteConfig.phone.display}
                 </a>
               </Row>
@@ -74,7 +74,7 @@ export function ContactSection() {
                 {siteConfig.deliveryArea}
               </Row>
               <Row icon={<InstagramIcon size={16} />} label="Instagram">
-                <a href={siteConfig.instagram.url} {...external} className="transition-colors hover:text-accent-deep">
+                <a href={siteConfig.instagram.url} {...external} className="transition-colors hover:text-accent">
                   @{siteConfig.instagram.handle}
                 </a>
               </Row>

@@ -12,10 +12,10 @@ const sectionIds = navLinks.map((l) => l.id)
 
 export function Brand({ onClick }: { onClick?: () => void }) {
   return (
-    <a href="#home" onClick={onClick} className="flex items-center gap-2.5 text-cocoa" aria-label={`${siteConfig.name} — home`}>
-      <CakeMark size={30} className="text-accent-deep" />
-      <span className="font-display text-[1.3rem] leading-none tracking-tight whitespace-nowrap min-[360px]:text-[1.4rem] sm:text-[1.5rem]">
-        The Cake <em className="text-accent">Vibe</em>
+    <a href="#home" onClick={onClick} className="flex items-center gap-2.5 text-ink" aria-label={`${siteConfig.name} — home`}>
+      <CakeMark size={28} className="text-accent" />
+      <span className="font-display text-[1.15rem] leading-none font-extrabold tracking-[-0.03em] whitespace-nowrap min-[360px]:text-[1.25rem] sm:text-[1.35rem]">
+        The Cake <span className="text-accent">Vibe</span>
       </span>
     </a>
   )
@@ -44,7 +44,7 @@ export function Navbar() {
         transition={{ duration: 0.8, ease: easeSoft }}
         className={`transition-[background-color,box-shadow,border-color,backdrop-filter] duration-500 ${
           scrolled || open
-            ? 'border-b border-line bg-cream/90 backdrop-blur-xl'
+            ? 'border-b border-line bg-canvas/90 backdrop-blur-xl'
             : 'border-b border-transparent bg-transparent'
         }`}
       >
@@ -57,7 +57,7 @@ export function Navbar() {
                 <a
                   href={`#${link.id}`}
                   aria-current={active === link.id ? 'true' : undefined}
-                  className="relative rounded-full px-4 py-2 text-[0.925rem] text-cocoa/75 transition-colors hover:text-cocoa aria-[current]:text-cocoa"
+                  className="relative rounded-control px-4 py-2 text-[0.925rem] font-medium text-muted transition-colors hover:text-ink aria-[current]:text-ink"
                 >
                   {link.label}
                   {active === link.id && (
@@ -77,7 +77,7 @@ export function Navbar() {
               href={siteConfig.instagram.url}
               {...external}
               aria-label="The Cake Vibe on Instagram"
-              className="hidden h-11 w-11 items-center justify-center rounded-full text-cocoa transition-colors hover:bg-sand sm:flex"
+              className="hidden h-11 w-11 items-center justify-center rounded-control text-ink transition-colors hover:bg-mist sm:flex"
             >
               <InstagramIcon size={20} />
             </a>
@@ -90,7 +90,7 @@ export function Navbar() {
               href={whatsappLink()}
               {...external}
               aria-label="Order on WhatsApp"
-              className="flex h-11 w-11 items-center justify-center rounded-full bg-cocoa text-cream transition-transform active:scale-95 sm:hidden"
+              className="flex h-11 w-11 items-center justify-center rounded-control bg-ink-deep text-white transition-transform active:scale-95 sm:hidden"
             >
               <WhatsAppIcon size={19} />
             </a>
@@ -100,7 +100,7 @@ export function Navbar() {
               aria-expanded={open}
               aria-controls="mobile-menu"
               aria-label={open ? 'Close menu' : 'Open menu'}
-              className="flex h-11 w-11 items-center justify-center rounded-full text-cocoa transition-colors hover:bg-sand lg:hidden"
+              className="flex h-11 w-11 items-center justify-center rounded-control text-ink transition-colors hover:bg-mist lg:hidden"
             >
               {open ? <X size={22} strokeWidth={1.6} /> : <Menu size={22} strokeWidth={1.6} />}
             </button>
@@ -116,7 +116,7 @@ export function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-x-0 top-16 bottom-0 overflow-y-auto bg-cream sm:top-20 lg:hidden"
+            className="fixed inset-x-0 top-16 bottom-0 overflow-y-auto bg-canvas sm:top-20 lg:hidden"
           >
             <motion.div
               initial="hidden"
@@ -134,9 +134,9 @@ export function Navbar() {
                     <a
                       href={`#${link.id}`}
                       onClick={close}
-                      className="flex items-baseline gap-4 py-4 font-display text-[1.75rem] leading-none text-cocoa"
+                      className="flex items-baseline gap-4 py-4 font-display text-[1.6rem] leading-none font-bold tracking-[-0.03em] text-ink"
                     >
-                      <span className="font-sans text-xs tracking-widest text-accent-deep">0{i + 1}</span>
+                      <span className="font-sans text-xs font-semibold tracking-widest text-accent">0{i + 1}</span>
                       {link.label}
                     </a>
                   </motion.li>

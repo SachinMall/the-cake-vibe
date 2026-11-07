@@ -35,7 +35,7 @@ export function HeroSection() {
           initial="hidden"
           animate="show"
           variants={{ hidden: {}, show: { transition: { staggerChildren: 0.1, delayChildren: 0.1 } } }}
-          className="lg:col-span-6 xl:col-span-5"
+          className="lg:col-span-6"
         >
           <motion.p variants={item} className="eyebrow flex items-center gap-3">
             <span className="h-px w-6 bg-accent" aria-hidden="true" />
@@ -44,14 +44,14 @@ export function HeroSection() {
 
           <h1
             id="hero-title"
-            className="mt-4 font-display text-[2.4rem] leading-[1.04] font-light tracking-[-0.02em] text-cocoa min-[380px]:text-[2.65rem] sm:text-[3.5rem] lg:text-[3.6rem] xl:text-[4.15rem]"
+            className="mt-4 font-display text-[2.4rem] leading-[1.04] font-extrabold tracking-[-0.035em] text-ink min-[380px]:text-[2.65rem] sm:text-[3.4rem] lg:text-[3.35rem] xl:text-[3.9rem]"
           >
             {headline.map((word, i) => (
               <Fragment key={i}>
                 {/* mask that each word slides up through */}
                 <span className="inline-block overflow-hidden pb-[0.1em] align-bottom">
                   <motion.span
-                    className={`inline-block ${word.accent ? 'pr-[0.04em] text-accent italic' : ''}`}
+                    className={`inline-block ${word.accent ? 'pr-[0.04em] text-accent' : ''}`}
                     variants={{
                       hidden: { y: '105%' },
                       show: { y: 0, transition: { duration: 0.9, ease: easeSoft } },
@@ -89,24 +89,24 @@ export function HeroSection() {
             className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-1 text-[0.875rem] text-muted sm:mt-7"
           >
             <li>
-              <a href={telLink} className="inline-flex min-h-11 items-center gap-2 transition-colors hover:text-cocoa">
-                <Phone size={15} strokeWidth={1.75} className="text-accent-deep" />
+              <a href={telLink} className="inline-flex min-h-11 items-center gap-2 transition-colors hover:text-ink">
+                <Phone size={15} strokeWidth={1.75} className="text-accent" />
                 {siteConfig.phone.display}
               </a>
             </li>
             <li className="inline-flex min-h-11 items-center gap-2">
-              <MapPin size={15} strokeWidth={1.75} className="text-accent-deep" />
+              <MapPin size={15} strokeWidth={1.75} className="text-accent" />
               Delivery across Wada
             </li>
           </motion.ul>
         </motion.div>
 
-        <div className="relative lg:col-span-6 xl:col-span-7">
+        <div className="relative lg:col-span-6">
           <motion.div
             initial={{ opacity: 0, scale: 1.03 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1.2, ease: easeSoft }}
-            className="relative overflow-hidden rounded-panel bg-sand"
+            className="relative overflow-hidden rounded-panel bg-mist"
           >
             <CakeImage
               id={featuredImages.hero}
@@ -124,7 +124,7 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: easeSoft, delay: 0.6 }}
-            className="absolute -bottom-8 -left-6 hidden w-[30%] max-w-[210px] rounded-[1.25rem] bg-cream p-1.5 shadow-lift sm:block lg:-left-10"
+            className="absolute -bottom-8 -left-6 hidden w-[30%] max-w-[210px] rounded-[1.25rem] bg-canvas p-1.5 shadow-lift sm:block lg:-left-10"
           >
             <CakeImage
               id={featuredImages.heroAccent}

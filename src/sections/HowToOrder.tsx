@@ -15,14 +15,14 @@ const steps = [
 
 export function HowToOrder() {
   return (
-    <section aria-labelledby="order-title" className="section">
+    <section aria-labelledby="order-title" className="section bg-mist">
       <div className="container-page">
         <SectionHeading
           id="order-title"
           eyebrow="How to Order"
           title={
             <>
-              Three easy steps to <em className="text-accent">your cake</em>
+              Three easy steps to <span className="text-muted">your cake</span>
             </>
           }
           intro="No sign-ups, no forms — just a quick conversation."
@@ -43,11 +43,11 @@ export function HowToOrder() {
               variants={fadeUp}
               className="relative flex items-start gap-4 md:flex-col md:items-center md:gap-0 md:text-center"
             >
-              <span className="relative flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-line bg-cream font-display text-lg text-accent-deep italic">
+              <span className="relative flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-line bg-white font-display text-base font-bold text-accent">
                 {step.n}
               </span>
               <div className="pt-1.5 md:pt-5">
-                <h3 className="font-display text-[1.3rem] leading-snug text-cocoa">{step.title}</h3>
+                <h3 className="font-display text-[1.3rem] leading-snug font-semibold tracking-[-0.015em] text-ink">{step.title}</h3>
                 <p className="mt-1 max-w-xs text-[0.95rem] leading-relaxed text-muted">{step.text}</p>
               </div>
             </motion.li>
@@ -56,7 +56,8 @@ export function HowToOrder() {
 
         <Reveal className="mt-9 grid grid-cols-1 gap-3 sm:mt-12 sm:flex sm:justify-center">
           <ButtonLink href={whatsappLink()} {...external} size="lg" icon={<WhatsAppIcon size={19} />}>
-            Start Your Order on WhatsApp
+            <span className="min-[360px]:hidden">Order on WhatsApp</span>
+            <span className="hidden min-[360px]:inline">Start Your Order on WhatsApp</span>
           </ButtonLink>
           <ButtonLink href={telLink} variant="outline" size="lg" icon={<Phone size={17} strokeWidth={1.75} />}>
             Call Now

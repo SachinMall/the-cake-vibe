@@ -43,7 +43,7 @@ export function CakeImage({
 
   return (
     <div
-      className={`relative overflow-hidden bg-blush ${className}`}
+      className={`relative overflow-hidden bg-mist ${className}`}
       style={{
         aspectRatio: fill ? undefined : `${meta.width} / ${meta.height}`,
         backgroundImage: `url(${meta.placeholder})`,

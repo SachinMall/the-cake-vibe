@@ -37,14 +37,14 @@ export function CakeCollection() {
           title={
             <>
               <span className="block sm:inline">Baked at home,</span>{' '}
-              <em className="text-accent">made for you</em>
+              <span className="text-muted">made for you</span>
             </>
           }
           intro="Cakes we've made for birthdays, anniversaries and everyday celebrations. Tap a cake to see more, then order it on WhatsApp in one message."
         />
 
         {/* Category filter — sticky, edge-to-edge scroller on phones; a single row on larger screens */}
-        <div className="sticky top-16 z-30 -mx-5 mt-8 border-b border-line bg-cream/92 backdrop-blur-md sm:static sm:mx-0 sm:mt-10 sm:bg-transparent sm:backdrop-blur-none">
+        <div className="sticky top-16 z-30 -mx-5 mt-8 border-b border-line bg-canvas/92 backdrop-blur-md sm:static sm:mx-0 sm:mt-10 sm:bg-transparent sm:backdrop-blur-none">
           <div
             role="tablist"
             aria-label="Filter cakes by category"
@@ -59,18 +59,18 @@ export function CakeCollection() {
                   role="tab"
                   aria-selected={active}
                   onClick={() => setFilter(f.id)}
-                  className={`relative inline-flex h-12 shrink-0 items-center gap-1.5 px-3 text-[0.875rem] font-medium whitespace-nowrap transition-colors duration-300 sm:px-3.5 ${
-                    active ? 'text-cocoa' : 'text-muted hover:text-cocoa'
+                  className={`relative inline-flex h-12 shrink-0 items-center gap-1.5 px-3 text-[0.875rem] font-semibold whitespace-nowrap transition-colors duration-300 sm:px-3.5 ${
+                    active ? 'text-ink' : 'text-muted hover:text-ink'
                   }`}
                 >
                   {f.label}
-                  <span className={`text-[0.7rem] tabular-nums ${active ? 'text-accent-deep' : 'text-muted/70'}`}>
+                  <span className={`text-[0.7rem] tabular-nums ${active ? 'text-accent' : 'text-muted/70'}`}>
                     {f.count}
                   </span>
                   {active && (
                     <motion.span
                       layoutId="filter-underline"
-                      className="absolute inset-x-3 -bottom-px h-[2px] rounded-full bg-cocoa sm:inset-x-3.5"
+                      className="absolute inset-x-3 -bottom-px h-[2px] rounded-full bg-accent sm:inset-x-3.5"
                       transition={{ type: 'spring', stiffness: 420, damping: 38 }}
                     />
                   )}
@@ -97,9 +97,9 @@ export function CakeCollection() {
         </motion.div>
 
         {/* Custom cake call-out */}
-        <Reveal className="mt-12 grid grid-cols-1 items-center gap-5 rounded-panel bg-sand px-6 py-8 sm:mt-16 sm:px-10 sm:py-10 md:grid-cols-[1fr_auto] md:gap-10 lg:px-14">
+        <Reveal className="mt-12 grid grid-cols-1 items-center gap-5 rounded-panel border border-line bg-mist px-5 py-8 sm:mt-16 sm:px-10 sm:py-10 md:grid-cols-[1fr_auto] md:gap-10 lg:px-14">
           <div>
-            <h3 className="font-display text-[1.6rem] leading-tight text-balance text-cocoa sm:text-[2rem]">
+            <h3 className="font-display text-[1.6rem] leading-tight font-semibold tracking-[-0.015em] text-balance text-ink sm:text-[2rem]">
               Have a cake in mind that isn't here?
             </h3>
             <p className="mt-2 max-w-xl leading-relaxed text-pretty text-muted">

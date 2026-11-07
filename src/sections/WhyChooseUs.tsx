@@ -13,14 +13,14 @@ const reasons = [
 
 export function WhyChooseUs() {
   return (
-    <section aria-labelledby="why-title" className="section bg-white">
+    <section aria-labelledby="why-title" className="section bg-mist">
       <div className="container-page">
         <SectionHeading
           id="why-title"
           eyebrow="Why The Cake Vibe"
           title={
             <>
-              The little things that make it <em className="text-accent">special</em>
+              The little things that make it <span className="text-muted">special</span>
             </>
           }
         />
@@ -41,11 +41,11 @@ export function WhyChooseUs() {
                 i === reasons.length - 1 ? 'sm:col-span-2 lg:col-span-1' : ''
               }`}
             >
-              <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-sand text-accent-deep">
+              <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-control bg-accent-tint text-accent">
                 <Icon size={19} strokeWidth={1.5} />
               </span>
               <div className="sm:mt-4">
-                <h3 className="font-display text-[1.15rem] leading-snug text-cocoa">{title}</h3>
+                <h3 className="font-display text-[1.15rem] leading-snug font-semibold tracking-[-0.015em] text-ink">{title}</h3>
                 <p className="mt-1.5 text-[0.9rem] leading-relaxed text-pretty text-muted">{text}</p>
               </div>
             </motion.li>

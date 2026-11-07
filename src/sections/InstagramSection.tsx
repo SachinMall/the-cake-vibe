@@ -34,7 +34,7 @@ export function InstagramSection() {
           eyebrow="Instagram"
           title={
             <>
-              More sweet moments <em className="text-accent">on Instagram</em>
+              More sweet moments <span className="text-muted">on Instagram</span>
             </>
           }
           intro="Follow our baking journey and discover more creations."
@@ -64,7 +64,7 @@ export function InstagramSection() {
                   className="aspect-square"
                   imgClassName="transition-transform duration-[900ms] ease-(--ease-soft) group-hover:scale-[1.05]"
                 />
-                <span className="absolute inset-0 flex items-center justify-center bg-cocoa/0 text-cream opacity-0 transition-all duration-500 group-hover:bg-cocoa/30 group-hover:opacity-100">
+                <span className="absolute inset-0 flex items-center justify-center bg-ink/0 text-canvas opacity-0 transition-all duration-500 group-hover:bg-ink/30 group-hover:opacity-100">
                   <InstagramIcon size={24} />
                 </span>
               </a>

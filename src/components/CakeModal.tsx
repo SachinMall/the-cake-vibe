@@ -82,7 +82,7 @@ function ModalBody({ cake, onClose }: { cake: Cake; onClose: () => void }) {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.3 }}
     >
-      <div className="absolute inset-0 bg-cocoa-deep/60 backdrop-blur-sm" onClick={onClose} aria-hidden="true" />
+      <div className="absolute inset-0 bg-ink-deep/55 backdrop-blur-sm" onClick={onClose} aria-hidden="true" />
 
       <motion.div
         ref={dialogRef}
@@ -93,20 +93,20 @@ function ModalBody({ cake, onClose }: { cake: Cake; onClose: () => void }) {
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: 40 }}
         transition={{ duration: 0.55, ease: easeSoft }}
-        className="relative flex max-h-[94svh] w-full flex-col overflow-hidden rounded-t-panel bg-cream shadow-lift sm:max-h-[90vh] sm:max-w-5xl sm:rounded-panel lg:grid lg:grid-cols-[1.25fr_1fr]"
+        className="relative flex max-h-[94svh] w-full flex-col overflow-hidden rounded-t-panel bg-canvas shadow-lift sm:max-h-[90vh] sm:max-w-5xl sm:rounded-panel lg:grid lg:grid-cols-[1.25fr_1fr]"
       >
         <button
           ref={closeRef}
           type="button"
           onClick={onClose}
           aria-label="Close"
-          className="absolute top-3 right-3 z-20 flex h-11 w-11 items-center justify-center rounded-full bg-cream/90 text-cocoa shadow-soft backdrop-blur transition-colors hover:bg-white"
+          className="absolute top-3 right-3 z-20 flex h-11 w-11 items-center justify-center rounded-full bg-canvas/90 text-ink shadow-soft backdrop-blur transition-colors hover:bg-white"
         >
           <X size={20} strokeWidth={1.75} />
         </button>
 
         {/* Image viewer */}
-        <div className="relative shrink-0 overflow-hidden bg-blush">
+        <div className="relative shrink-0 overflow-hidden bg-mist">
           <div className="relative h-[46svh] max-h-[560px] sm:h-[52vh] lg:h-full lg:max-h-none lg:min-h-[560px]">
             <AnimatePresence initial={false} custom={direction} mode="popLayout">
               <motion.div
@@ -146,7 +146,7 @@ function ModalBody({ cake, onClose }: { cake: Cake; onClose: () => void }) {
                   type="button"
                   onClick={() => go(-1)}
                   aria-label="Previous photo"
-                  className="absolute top-1/2 left-3 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-cream/90 text-cocoa shadow-soft backdrop-blur transition hover:bg-white"
+                  className="absolute top-1/2 left-3 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-canvas/90 text-ink shadow-soft backdrop-blur transition hover:bg-white"
                 >
                   <ChevronLeft size={20} />
                 </button>
@@ -154,7 +154,7 @@ function ModalBody({ cake, onClose }: { cake: Cake; onClose: () => void }) {
                   type="button"
                   onClick={() => go(1)}
                   aria-label="Next photo"
-                  className="absolute top-1/2 right-3 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-cream/90 text-cocoa shadow-soft backdrop-blur transition hover:bg-white"
+                  className="absolute top-1/2 right-3 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-canvas/90 text-ink shadow-soft backdrop-blur transition hover:bg-white"
                 >
                   <ChevronRight size={20} />
                 </button>
@@ -175,11 +175,11 @@ function ModalBody({ cake, onClose }: { cake: Cake; onClose: () => void }) {
         {/* Details */}
         <div className="flex min-h-0 flex-1 flex-col overflow-y-auto p-6 pb-0 sm:p-8 sm:pb-0 lg:p-10">
           <p className="eyebrow">{labels.join(' · ')}</p>
-          <h2 id="cake-modal-title" className="mt-3 font-display text-3xl leading-tight text-cocoa sm:text-4xl">
+          <h2 id="cake-modal-title" className="mt-3 font-display text-[1.75rem] leading-tight font-bold tracking-[-0.025em] text-ink sm:text-[2.1rem]">
             {cake.name}
           </h2>
           {cake.description && <p className="mt-4 leading-relaxed text-muted">{cake.description}</p>}
-          {cake.price && <p className="mt-4 text-lg font-medium text-cocoa">{cake.price}</p>}
+          {cake.price && <p className="mt-4 text-lg font-semibold text-ink">{cake.price}</p>}
 
           {count > 1 && (
             <div className="mt-6 flex gap-2 overflow-x-auto scrollbar-none" role="group" aria-label="Choose photo">
@@ -193,8 +193,8 @@ function ModalBody({ cake, onClose }: { cake: Cake; onClose: () => void }) {
                   }}
                   aria-label={`Show photo ${i + 1}`}
                   aria-pressed={i === index}
-                  className={`h-16 w-16 shrink-0 overflow-hidden rounded-xl ring-2 ring-offset-2 ring-offset-cream transition ${
-                    i === index ? 'ring-accent-deep' : 'opacity-70 ring-transparent hover:opacity-100'
+                  className={`h-16 w-16 shrink-0 overflow-hidden rounded-control ring-2 ring-offset-2 ring-offset-canvas transition ${
+                    i === index ? 'ring-accent' : 'opacity-70 ring-transparent hover:opacity-100'
                   }`}
                 >
                   <CakeImage id={id} alt="" sizes="64px" fill className="h-full w-full" />
@@ -203,32 +203,32 @@ function ModalBody({ cake, onClose }: { cake: Cake; onClose: () => void }) {
             </div>
           )}
 
-          <div className="mt-6 rounded-2xl border border-line bg-white/60 p-4 text-sm leading-relaxed text-muted">
+          <div className="mt-6 rounded-card border border-line bg-mist p-4 text-sm leading-relaxed text-muted">
             Sizes, flavours and pricing are shared on WhatsApp — tell us your occasion and we'll help you choose.
           </div>
 
           <a
             href={whatsappForCustomCake()}
             {...external}
-            className="mt-4 inline-flex items-center gap-2 self-start py-2 text-sm text-accent-deep hover:text-cocoa"
+            className="mt-4 inline-flex items-center gap-2 self-start py-2 text-sm font-medium text-accent hover:text-accent-deep"
           >
             <Sparkles size={15} /> Want something custom? Ask us
           </a>
 
-          <div className="sticky bottom-0 -mx-6 mt-auto flex gap-3 bg-gradient-to-t from-cream from-75% to-cream/0 px-6 pt-6 pb-[calc(1.25rem+env(safe-area-inset-bottom))] sm:-mx-8 sm:px-8 sm:pb-8 lg:static lg:mx-0 lg:flex-col lg:bg-none lg:px-0 lg:pt-8 lg:pb-10">
+          <div className="sticky bottom-0 -mx-6 mt-auto flex gap-3 bg-gradient-to-t from-canvas from-75% to-canvas/0 px-6 pt-6 pb-[calc(1.25rem+env(safe-area-inset-bottom))] sm:-mx-8 sm:px-8 sm:pb-8 lg:static lg:mx-0 lg:flex-col lg:bg-none lg:px-0 lg:pt-8 lg:pb-10">
             <ButtonLink
               href={whatsappForCake(cake.name)}
               {...external}
               size="lg"
               icon={<WhatsAppIcon size={20} />}
-              className="flex-1"
+              className="flex-1 lg:flex-none"
             >
               Order This Cake
             </ButtonLink>
             <a
               href={telLink}
               aria-label="Call to discuss"
-              className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-cocoa/25 text-cocoa transition-colors hover:bg-cocoa hover:text-cream lg:hidden"
+              className="flex h-14 w-14 shrink-0 items-center justify-center rounded-control border border-line text-ink transition-colors hover:bg-mist lg:hidden"
             >
               <Phone size={19} strokeWidth={1.75} />
             </a>
