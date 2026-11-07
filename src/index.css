@@ -1,0 +1,106 @@
+@import 'tailwindcss';
+
+@theme {
+  /* Palette — warm ivory, chocolate brown, muted rose */
+  --color-cream: #fff9f5; /* page background */
+  --color-sand: #f3e9e3; /* secondary background */
+  --color-blush: #f3e9e3; /* alias kept for placeholders / hovers */
+  --color-cocoa: #49352f; /* primary text + dark CTA */
+  --color-cocoa-deep: #3a2a25; /* hover / footer */
+  --color-accent: #b87972; /* muted rose — display accents, rules */
+  --color-accent-deep: #9a5f58; /* rose for small text (AA on ivory) */
+  --color-muted: #87746c; /* secondary text */
+  --color-line: #eaddd5; /* hairlines */
+  --color-rose-light: #dba8a1; /* rose on dark chocolate surfaces */
+  --color-whatsapp: #1fa855;
+
+  --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
+  --font-sans: 'DM Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  /* One radius family, used everywhere */
+  --radius-card: 1rem;
+  --radius-panel: 1.75rem;
+
+  --shadow-soft: 0 1px 2px rgb(73 53 47 / 0.04), 0 6px 20px -10px rgb(73 53 47 / 0.14);
+  --shadow-lift: 0 2px 6px rgb(73 53 47 / 0.05), 0 20px 40px -20px rgb(73 53 47 / 0.28);
+
+  --ease-soft: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 4.5rem;
+    -webkit-tap-highlight-color: transparent;
+    text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-cream font-sans text-cocoa antialiased;
+    overflow-x: clip;
+  }
+
+  /* Fraunces: soften the terminals slightly for a warmer bakery feel */
+  .font-display {
+    font-variation-settings: 'SOFT' 50;
+    font-optical-sizing: auto;
+  }
+
+  ::selection {
+    background: var(--color-sand);
+    color: var(--color-cocoa);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent-deep);
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-10;
+  }
+
+  /* Single vertical rhythm for every section */
+  .section {
+    @apply py-16 sm:py-20 lg:py-24;
+  }
+
+  .eyebrow {
+    @apply text-[0.7rem] font-semibold tracking-[0.22em] text-accent-deep uppercase;
+  }
+
+  /* Section titles: one scale used site-wide */
+  .heading-section {
+    @apply font-display text-[2rem] leading-[1.1] font-normal tracking-[-0.015em] text-cocoa sm:text-[2.5rem] lg:text-[2.875rem];
+  }
+
+  .lede {
+    @apply text-[0.98rem] leading-relaxed text-pretty text-muted sm:text-[1.05rem];
+  }
+}
+
+@utility pb-safe {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+@utility scrollbar-none {
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
